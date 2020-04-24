@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "722952499779",
+    "firebase_url": "https://eden-93c6d.firebaseio.com",
+    "project_id": "eden-93c6d",
+    "storage_bucket": "eden-93c6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722952499779:android:5cb586591b1b2f23d4daf6",
+        "android_client_info": {
+          "package_name": "com.xhino.eden"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722952499779-1m9os12oo3e5mpeafsdovjj0sn98fsak.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqYNBX2wmkrUyB-HmIEljmOiQlQ2bOWKY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "722952499779-1m9os12oo3e5mpeafsdovjj0sn98fsak.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
