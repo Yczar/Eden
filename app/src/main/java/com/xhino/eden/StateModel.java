@@ -2,13 +2,20 @@ package com.xhino.eden;
 
 public class StateModel {
 
-
 private String StateName, ForestType;
 
     private StateModel(){
 
+
+
     }
 
+    private StateModel (String StateName, String ForestType){
+
+        this.StateName=StateName;
+        this.ForestType=ForestType;
+
+    }
 
     public String getStateName() {
         return StateName;

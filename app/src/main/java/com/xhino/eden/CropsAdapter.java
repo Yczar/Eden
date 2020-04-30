@@ -3,14 +3,17 @@ package com.xhino.eden;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
-public class CropsAdapter extends FirestoreRecyclerAdapter<CropsModel, CropsAdapter.CropsHolder> {
+import com.google.firebase.firestore.DocumentSnapshot;
 
+public class CropsAdapter extends FirestoreRecyclerAdapter<CropsModel, CropsAdapter.CropsHolder> {
+ // private AdapterView.OnItemClickListener listener;
 
     public CropsAdapter(@NonNull FirestoreRecyclerOptions<CropsModel> options) {
         super(options);
@@ -39,8 +42,28 @@ public class CropsAdapter extends FirestoreRecyclerAdapter<CropsModel, CropsAdap
             super(itemView);
             crop = itemView.findViewById(R.id.crop_name);
             botanical_name = itemView.findViewById(R.id.Botanical);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    itemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    });
+
+
+                }
+            });
+
+            }
         }
+
+
+
     }
 
 
-}
+
+

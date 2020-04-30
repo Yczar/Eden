@@ -32,7 +32,7 @@
             android:layout_marginTop="50dp"
             android:layout_marginRight="30dp"
             android:fontFamily="@font/nunito_semibold"
-            android:text="botanical Name"
+            android:text="forest Type"
             android:textColor="#999999"
             android:textSize="14sp" />
 

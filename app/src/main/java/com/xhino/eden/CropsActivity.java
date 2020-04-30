@@ -5,23 +5,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+
 
 public class CropsActivity extends AppCompatActivity  {
 
     FirebaseFirestore firebaseFirestore;
     RecyclerView mcropList;
-    FirestoreRecyclerAdapter adapter;
+   public  FirestoreRecyclerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +39,17 @@ public class CropsActivity extends AppCompatActivity  {
                 build();
 
         adapter = new CropsAdapter(options);
+
         mcropList.setHasFixedSize(true);
         mcropList.setLayoutManager(new LinearLayoutManager(this));
         mcropList.setAdapter(adapter);
+
+
+
+
     }
+
+
 
 
 
@@ -55,6 +64,11 @@ public class CropsActivity extends AppCompatActivity  {
         super.onStart();
         adapter.startListening();
     }
-}
 
+
+
+
+
+
+    }
 

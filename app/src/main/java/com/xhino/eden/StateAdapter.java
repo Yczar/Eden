@@ -21,7 +21,7 @@ public class StateAdapter extends FirestoreRecyclerAdapter<StateModel, StateAdap
 
     @Override
     protected void onBindViewHolder(@NonNull StateHolder holder, int position, @NonNull StateModel model) {
-        holder.states.setText(model.getStateName());
+        holder.states_Name.setText(model.getStateName());
         holder.forest_Type.setText(model.getForestType());
 
 
@@ -37,16 +37,22 @@ public class StateAdapter extends FirestoreRecyclerAdapter<StateModel, StateAdap
 
     class StateHolder extends RecyclerView.ViewHolder{
 
-        private TextView states;
+        private TextView states_Name;
         private TextView forest_Type;
 
 
         public StateHolder(@NonNull View itemView) {
             super(itemView);
 
-           states = itemView.findViewById(R.id.state_name);
+           states_Name= itemView.findViewById(R.id.state_name);
            forest_Type = itemView.findViewById(R.id.Forest);
 
+           itemView.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+
+               }
+           });
         }
     }
 }

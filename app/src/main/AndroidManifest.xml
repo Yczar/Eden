@@ -16,13 +16,21 @@
         <activity android:name=".CropsActivity" >
 
 
-        </activity>
-        <activity android:name=".StateActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
+        </activity>
+        <activity android:name=".StateActivity" >
+
+
+
+        </activity>
+        <activity android:name=".Processing" >
+
 
         </activity>
     </application>

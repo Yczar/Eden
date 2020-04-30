@@ -38,4 +38,6 @@ public class StateActivity extends AppCompatActivity {
         mStateList.setAdapter(adapter);
 
     }
+
+
 }
