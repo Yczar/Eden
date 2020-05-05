@@ -11,48 +11,76 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
-public class StateAdapter extends FirestoreRecyclerAdapter<StateModel, StateAdapter.StateHolder> {
+import java.util.ArrayList;
 
+public class StateAdapter extends RecyclerView.Adapter<StateAdapter.StateHolder>{
+    private OnItemClickedListener mListener;
 
+    private ArrayList<StateModel> mStateList;
 
-    public StateAdapter(@NonNull FirestoreRecyclerOptions<StateModel> options) {
-        super(options);
-    }
+  public interface OnItemClickedListener{
+      void OnItemClick(int position);
+  }
 
-    @Override
-    protected void onBindViewHolder(@NonNull StateHolder holder, int position, @NonNull StateModel model) {
-        holder.states_Name.setText(model.getStateName());
-        holder.forest_Type.setText(model.getForestType());
-
-
-    }
+  public void setOnItemClickListener(OnItemClickedListener listener){
+      mListener=listener;
+  }
 
     @NonNull
     @Override
     public StateHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v= LayoutInflater.from(parent.getContext()).inflate(R.layout.states_item_list,parent, false);
 
-        return new  StateHolder(v);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.states_item_list, parent, false);
+
+       StateHolder stateHolder=new StateHolder(v, mListener);
+        return  stateHolder;
     }
 
-    class StateHolder extends RecyclerView.ViewHolder{
+    @Override
+    public void onBindViewHolder(@NonNull StateHolder holder, int position) {
+       StateModel currentState = mStateList.get(position);
 
-        private TextView states_Name;
-        private TextView forest_Type;
+        holder.mTextView1.setText(currentState.getStateName());
+        holder.mTextView2.setText(currentState.getForestType());
 
 
-        public StateHolder(@NonNull View itemView) {
+
+
+    }
+
+    @Override
+    public int getItemCount() {
+        return mStateList.size();
+    }
+
+    public static class StateHolder extends RecyclerView.ViewHolder {
+
+        public TextView mTextView1;
+        public TextView mTextView2;
+
+
+        public StateHolder(@NonNull View itemView, OnItemClickedListener listener) {
             super(itemView);
 
-           states_Name= itemView.findViewById(R.id.state_name);
-           forest_Type = itemView.findViewById(R.id.Forest);
+            mTextView1 = itemView.findViewById(R.id.state_name);
+            mTextView2 = itemView.findViewById(R.id.Forest);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(listener!=null){
+                        int position =getAdapterPosition();
+                        if(position!=RecyclerView.NO_POSITION){
+                            listener.OnItemClick(position);
+                        }
+                    }
 
-           itemView.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View v) {
 
-               }
-           });
+                }
+            });
         }
     }
+    public StateAdapter(ArrayList<StateModel> stateItem) {
+        mStateList= stateItem;
+    }
+
 }

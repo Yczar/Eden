@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="30dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="30dp">
 
 
     <RelativeLayout
@@ -12,155 +12,145 @@
         android:layout_height="300dp">
 
 
-
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="120dp"
-
-            android:src="@drawable/forest1"
-            />
+            android:src="@drawable/forest1" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
             android:src="@drawable/ic_camera_alt_black_24dp"
 
             />
 
 
-
     </RelativeLayout>
 
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="300dp"
-    android:orientation="horizontal"
-    android:padding="16dp"
-    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        android:layout_weight="1">
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:layout_weight="1">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="43dp"
-                android:drawablePadding="@dimen/cardview_compat_inset_shadow"
-                android:fontFamily="@font/nunito_bold"
-                android:text="crop name "
-                android:textSize="20sp"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="43dp"
+                    android:drawablePadding="@dimen/cardview_compat_inset_shadow"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="crop name "
+                    android:textSize="20sp"
 
-                />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fetching crop Name"
-
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Botanical Name"
-                android:textSize="15sp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fetching Botanical Name"
-
-                />
+                    />
 
 
+                <TextView
+                    android:id="@+id/crops_names"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Banana"
+                    android:layout_marginTop="10dp"
+
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="State Name"
+                    android:textSize="15sp"
+                    android:layout_marginTop="20dp"
+                    />
 
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ondo"
+                     android:layout_marginTop="20dp"
+                    />
 
 
+            </LinearLayout>
 
 
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="250dp">
 
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="150dp"
-        android:layout_height="200dp">
+                <TextView
+                    android:id="@+id/state_display"
+                    android:layout_width="wrap_content"
+                    android:layout_height="43dp"
+                    android:drawablePadding="@dimen/cardview_compat_inset_shadow"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="Best Tree "
+                    android:textSize="20sp" />
 
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tectona grandi"
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
+                    />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Growth region"
+                    android:textSize="15sp"
 
-            <TextView
-                android:id="@+id/state_display"
-                android:layout_width="wrap_content"
-                android:layout_height="43dp"
-                android:drawablePadding="@dimen/cardview_compat_inset_shadow"
-                android:fontFamily="@font/nunito_bold"
-                android:text="State Name "
-                android:textSize="20sp"/>
+                    />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="rainforest"
+                    android:layout_marginTop="10dp"
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fetching your State"
-
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Botanical Name"
-                android:textSize="15sp"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fetching Botanical Name"
-
-                />
+                    />
 
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Spacing : 3m "
+                    />
 
 
-        </LinearLayout>
+            </LinearLayout>
 
 
+        </androidx.cardview.widget.CardView>
 
 
-    </androidx.cardview.widget.CardView>
-
-
-
-
-</LinearLayout>
-
+    </LinearLayout>
 
 
     <Button
@@ -169,8 +159,6 @@
         android:text="proceed"
 
         />
-
-
 
 
 </LinearLayout>

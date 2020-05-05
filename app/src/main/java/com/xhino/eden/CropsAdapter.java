@@ -13,7 +13,7 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.DocumentSnapshot;
 
 public class CropsAdapter extends FirestoreRecyclerAdapter<CropsModel, CropsAdapter.CropsHolder> {
- // private AdapterView.OnItemClickListener listener;
+  private OnItemClickListener listener;
 
     public CropsAdapter(@NonNull FirestoreRecyclerOptions<CropsModel> options) {
         super(options);
@@ -45,25 +45,36 @@ public class CropsAdapter extends FirestoreRecyclerAdapter<CropsModel, CropsAdap
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    int position=getAdapterPosition();
+                    if(position !=RecyclerView.NO_POSITION&& listener !=null){
+                        listener.OnItemClick(getSnapshots().getSnapshot(position), position);
 
-                    itemView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                        }
-                    });
-
-
+                    }
                 }
             });
 
-            }
+
+                }
+
         }
+
+
+    public    interface OnItemClickListener{
+
+        void OnItemClick(DocumentSnapshot documentSnapshot, int position);
 
 
 
     }
 
 
+
+
+
+public  void setOnItemClickListener(OnItemClickListener listener){
+        this.listener=listener;
+
+    }
+}
 
 
