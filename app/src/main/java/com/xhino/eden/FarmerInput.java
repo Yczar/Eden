@@ -1,5 +1,7 @@
 package com.xhino.eden;
 
+import com.xhino.eden.model.Crop;
+
 public class FarmerInput {
     public Crop crop;
     public String state;

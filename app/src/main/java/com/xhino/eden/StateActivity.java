@@ -1,8 +1,11 @@
 package com.xhino.eden;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,6 +40,7 @@ public class StateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.states_list);
         ArrayList<StateModel> stateItem = new ArrayList<>();
+
         stateItem.add(new StateModel("Lagos", "Mangrove", 30));
         stateItem.add(new StateModel("Bauchi", "Woodland and Tall Grass Savannah", 30));
         stateItem.add(new StateModel("Borno", "Short grass Savannah", 50));
@@ -67,14 +71,12 @@ public class StateActivity extends AppCompatActivity {
                 progressDialog.show();
 
 
-                final String s = stateItem.get(position).getStateName().toString();
-                final String f = stateItem.get(position).getForestType().toString();
-                final int e = stateItem.get(position).getErosion_Tendency();
-
+                final String state = stateItem.get(position).getStateName().toString();
                 Intent intent = new Intent(StateActivity.this, CropsActivity.class);
-                intent.putExtra("sendState", s);
-                intent.putExtra("sendForest", f);
-                intent.putExtra("sendTendency", e);
+                SharedPreferences preferences = getApplicationContext().getSharedPreferences("FarmerInput", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("state", state);
+                editor.apply();
                 startActivity(intent);
                /* Users user =new Users("", s, e);
                 FirebaseDatabase.getInstance().getReference("Users").child(Objects.requireNonNull(Objects.requireNonNull(FirebaseAuth.getInstance()

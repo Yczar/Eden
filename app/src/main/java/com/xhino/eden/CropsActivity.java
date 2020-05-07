@@ -1,6 +1,8 @@
 package com.xhino.eden;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +16,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.common.util.SharedPreferencesUtils;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.google.gson.Gson;
+import com.xhino.eden.model.Crop;
 
 
 public class CropsActivity extends AppCompatActivity  {
@@ -51,22 +56,21 @@ public class CropsActivity extends AppCompatActivity  {
         adapter.setOnItemClickListener(new CropsAdapter.OnItemClickListener() {
             @Override
             public void OnItemClick(DocumentSnapshot documentSnapshot, int position) {
-                CropsModel crops=documentSnapshot.toObject(CropsModel.class);
-                String selectedCropName=crops.getCropName().toString();
-              //  double SelectedCropShade=crops.getShadeRequirement();
-                String SelectedCropBotanical=crops.getBotanicalName();
+                Crop crop = documentSnapshot.toObject(Crop.class);
 
-                Toast.makeText(CropsActivity.this,selectedCropName,Toast.LENGTH_LONG).show();
-                Intent intent=new Intent(CropsActivity.this, Eden.class);
-                intent.putExtra("sendCropName", selectedCropName);
-                intent.putExtra("sendBotanicalName", SelectedCropBotanical);
-                intent.putExtra("sendFinalState",receivedState);
-                intent.putExtra("sendFinalForest",receivedForest);
-                intent.putExtra("sendFinalTendency",receivedTendency);
-                startActivityForResult(intent, 0);
+                //we will pass this crop to the Processing class
+                SharedPreferences preferences = getApplicationContext().getSharedPreferences("FarmerInput", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                Gson gson = new Gson();
+                editor.putString("cropdata", gson.toJson(crop)); //convert Crop Object to a json string before storing in SPrefs
+                editor.apply();
+
+                Intent intent = new Intent(CropsActivity.this, Processing.class);
+                startActivity(intent);
 
 
-
+                //oh! different activity. It makes sense to use shared preferences or do do you prefer to pass it via intent?
+                // remember the crops are populated from Firestore Recycler so im getting the value of the crop with the position ..
             }
         });
     }

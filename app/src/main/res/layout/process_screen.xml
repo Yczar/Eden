@@ -61,10 +61,10 @@
 
 
                 <TextView
-                    android:id="@+id/crops_names"
+                    android:id="@+id/crops_select"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Banana"
+                    android:text=""
                     android:layout_marginTop="10dp"
 
                     />
@@ -79,9 +79,10 @@
 
 
                 <TextView
+                    android:id="@+id/state_select"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ondo"
+                    android:text=""
                      android:layout_marginTop="20dp"
                     />
 
@@ -104,7 +105,7 @@
 
 
                 <TextView
-                    android:id="@+id/state_display"
+
                     android:layout_width="wrap_content"
                     android:layout_height="43dp"
                     android:drawablePadding="@dimen/cardview_compat_inset_shadow"
@@ -114,9 +115,11 @@
 
 
                 <TextView
+                    android:id="@+id/best_tree_Display"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Tectona grandi"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
 
                     />
 
@@ -129,9 +132,10 @@
                     />
 
                 <TextView
+                    android:id="@+id/Tree_region"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="rainforest"
+                    android:text=""
                     android:layout_marginTop="10dp"
 
                     />
@@ -141,6 +145,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Spacing : 3m "
+                    android:layout_marginTop="15dp"
                     />
 
 
