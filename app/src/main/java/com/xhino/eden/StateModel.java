@@ -3,7 +3,7 @@ package com.xhino.eden;
 public class StateModel {
 
 private String StateName, ForestType;
-private int erosion_Tendency;
+
 
    public StateModel(){
 
@@ -13,11 +13,10 @@ private int erosion_Tendency;
 
 
 
-    public StateModel (String StateName, String ForestType, int erosion_Tendency){
+    public StateModel (String StateName, String ForestType){
 
         this.StateName=StateName;
         this.ForestType=ForestType;
-        this.erosion_Tendency=erosion_Tendency;
 
 
     }
@@ -39,12 +38,5 @@ private int erosion_Tendency;
     }
 
 
-    public int getErosion_Tendency() {
-        return erosion_Tendency;
-    }
-
-    public void setErosion_Tendency(int erosion_Tendency) {
-        this.erosion_Tendency = erosion_Tendency;
-    }
 
 }

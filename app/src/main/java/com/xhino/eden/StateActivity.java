@@ -34,24 +34,39 @@ public class StateActivity extends AppCompatActivity {
     private RecyclerView.LayoutManager mLayoutManager;
 
 
-   // private StateAdapter adapter;
+    // private StateAdapter adapter;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.states_list);
         ArrayList<StateModel> stateItem = new ArrayList<>();
 
-        stateItem.add(new StateModel("Lagos", "Mangrove", 30));
-        stateItem.add(new StateModel("Bauchi", "Woodland and Tall Grass Savannah", 30));
-        stateItem.add(new StateModel("Borno", "Short grass Savannah", 50));
-        stateItem.add(new StateModel("Kano", "Short grass Savannah", 50));
-        stateItem.add(new StateModel("Kwara", "Woodland and Tall Grass Savannah", 40));
-        stateItem.add(new StateModel("Ogun", "Rain Forest", 30));
-        stateItem.add(new StateModel("Ondo", "Rain Forest", 30));
-        stateItem.add(new StateModel("Oyo", "Rain Forest", 30));
-        stateItem.add(new StateModel("Rivers", "Rain Forest", 30));
-        stateItem.add(new StateModel("Sokoto", "Short grass Savannah", 30));
-        stateItem.add(new StateModel("Taraba", "Woodland and Tall Grass Savannah", 30));
+        stateItem.add(new StateModel("Lagos", "Rain Forest"));
+        stateItem.add(new StateModel("Bauchi", "Savannah"));
+        stateItem.add(new StateModel("Borno", "Savannah"));
+        stateItem.add(new StateModel("Kano", "Savannah"));
+        stateItem.add(new StateModel("Kwara", "Savannah"));
+        stateItem.add(new StateModel("Ogun", "Rain Forest"));
+        stateItem.add(new StateModel("Ondo", "Rain Forest"));
+        stateItem.add(new StateModel("Oyo", "Rain Forest"));
+        stateItem.add(new StateModel("Rivers", "Rain Forest"));
+        stateItem.add(new StateModel("Sokoto", "Savannah"));
+        stateItem.add(new StateModel("Taraba", "Savannah"));
+        stateItem.add(new StateModel("Osun", "Savannah"));
+        stateItem.add(new StateModel("Benue", "Tropical Rainforest"));
+        stateItem.add(new StateModel("Bauchi", "Savannah"));
+        stateItem.add(new StateModel("Kano", "Savannah"));
+        stateItem.add(new StateModel("Kwara", "Savannah"));
+        stateItem.add(new StateModel("Ogun", "Rainforest"));
+        stateItem.add(new StateModel("Rivers", "Fresh Water Swamp"));
+        stateItem.add(new StateModel("Enugu", "Savannah"));
+        stateItem.add(new StateModel("Kastina", "Savannah"));
+        stateItem.add(new StateModel("Kaduna", "Savannah"));
+        stateItem.add(new StateModel("plateau", "Savannah"));
+        stateItem.add(new StateModel("Kogi", "Savannah"));
+        stateItem.add(new StateModel("Abuja", "Savannah"));
+        stateItem.add(new StateModel("Edo", "Tropical Rainforest"));
+        stateItem.add(new StateModel("Niger", "Savannah"));
 
 
         mRecyclerView = findViewById(R.id.state_list);
